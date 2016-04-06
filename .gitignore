@@ -1,20 +1,36 @@
-/blib/
-/.build/
-_build/
-cover_db/
-inc/
-Build
-!Build/
-Build.bat
-.last_cover_stats
-/Makefile
-/Makefile.old
-/MANIFEST.bak
-/META.yml
-/META.json
-/MYMETA.*
-nytprof.out
-/pm_to_blib
-*.o
-*.bs
-/_eumm/
+# Miserable desktop garbage
+
+## OSX Crap
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+## Windows Crap
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msm
+*.msp
+*.lnk
+
+## Linux Crap
+*~
+.fuse_hidden*
+.directory
+.Trash-*
