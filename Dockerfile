@@ -15,11 +15,18 @@ RUN wget -O - http://debian.drdteam.org/drdteam.gpg | sudo apt-key add -
 RUN apt-get update && apt-get upgrade
 RUN apt-get install --yes --quiet libsdl-image1.2 zandronum 
 
-RUN mkdir -p /zandronum/config && mkdir /zandronum/wads && \
-mkdir /zandronum/iwads && mkdir /zandronum/srv-exec/ && /zandronum/templates/
-ADD /config/ /zandronum/config/
-ADD /srv-exec/ /zandronum/serv-exec/
-ADD /templates/ /zandronum/templates/
+#Create a non-privileged user
+RUN useradd -ms /bin/bash zandronum
+USER zandronum
+WORKDIR /home/zandronum
+
+#Build the application directory and add files
+RUN mkdir /home/zandronum/config && \
+  mkdir /home/zandronum/wads && \
+  mkdir /home/zandronum/iwads && \
+  mkdir /home/zandronum/bin/
+ADD /config/ /home/zandronum/config/
+ADD /bin/ /home/zandronum/bin/
 
 CMD ["/zandronum/srv-exec/summon.sh"]
 ENTRYPOINT ["/zandronum/srv-exec/summon"]
