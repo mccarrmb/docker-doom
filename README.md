@@ -1,2 +1,2 @@
 # docker-doom
-A docker container for customizable, dedicated Zandronum servers.
+A server configuration and deployment tool utilizing a docker-based back-end.
