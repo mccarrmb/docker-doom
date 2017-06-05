@@ -1,10 +1,11 @@
 # Class DoomVars
 # 
 # Management class for Zandronum server variables.
+#
 # Default values for the server variables pulled from 
 # https://wiki.zandronum.com/Server_Variables. 
 # Default values for the console commands pulled from
-# https://wiki.zandronum.com/Console_Variables
+# the default linux zandronum.ini file
 
 class DoomVars
   def initialize(name )
@@ -24,6 +25,7 @@ class DoomVars
       sv_coopspawnvoodoodolls: "true",
       sv_coopunassignedvoodoodolls: "true",
       sv_coopunassignedvoodoodollsfornplayers: @max_players,
+      sv_corpsequeuesize: "64",
       sv_defaultdmflags: "true",
       sv_disableautohealth: "false",
       sv_disallowbots: "false",
@@ -60,7 +62,7 @@ class DoomVars
       sv_maxplayers: "32",
       sv_maxteams: "2",
       sv_minimizetosystray: "true",
-      sv_minvoters: "true",
+      sv_minvoters: "1",
       sv_motd: "",
       sv_nocallvote: "0",
       sv_nochangemapvote: "false",
@@ -97,9 +99,8 @@ class DoomVars
       sv_website: ""
     }
     @console_variables = {
-      autoaim: "35",
-      autosavecount: "",
-      bot_allowchat: "",
+      allcheats: "false",
+      bot_allowchat: "true",
       botskill: "",
       buckshot: "",
       chat_sound: "",
