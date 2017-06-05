@@ -1,4 +1,4 @@
-# Class DoomVar
+# Class DoomVars
 # 
 # Management class for Zandronum server variables.
 # Default values for the server variables pulled from 
@@ -6,7 +6,7 @@
 # Default values for the console commands pulled from
 # https://wiki.zandronum.com/Console_Variables
 
-class DoomVar
+class DoomVars
   def initialize(name )
     @server_name = name
     @max_players = "32" #Can be up to 64
@@ -96,9 +96,82 @@ class DoomVar
       sv_useteamstartsindm: "false",
       sv_website: ""
     }
-
     @console_variables = {
-      
+      autoaim: "35",
+      autosavecount: "",
+      bot_allowchat: "",
+      botskill: "",
+      buckshot: "",
+      chat_sound: "",
+      cl_allowmultipleannouncersounds: "",
+      cl_alwaysplayfragsleft: "",
+      cl_capfps: "",
+      cl_dontrestorefrags: "",
+      cl_drawcoopinfo: "",
+      cl_hitscandecailhack: "",
+      cl_icons: "",
+      cl_identifytarget: "",
+      cl_medals: "",
+      cl_oldfreelooklimit: "",
+      cl_password: "",
+      cl_respawnonfire: "",
+      cl_showcommands: "",
+      cl_showfullscreenvote: "",
+      cl_showlargefragmessages: "",
+      cl_skins: "",
+      cl_soundwhennotactive: "",
+      cl_spectatormove: "",
+      cl_startasspectator: "",
+      cl_stfullscreenhud: "",
+      cl_ticsperupdate: "",
+      cl_unlagged: "",
+      cl_useoriginalweaponorder: "",
+      cl_colorinmessages: "",
+      crashlogs: "",
+      crashlog_dir: "",
+      demo_compress: "",
+      demo_pure: "",
+      disableautosave: "",
+      domination: "",
+      duellimit: "",
+      fov: "",
+      fraglimit: "",
+      gl_billboard_mode: "",
+      gl_interpolate_model_frames: "",
+      gl_nogl: "",
+      gl_particles_style: "",
+      gl_texture_format: "",
+      gl_texture_hqresize: "",
+      gl_texture_hqresize_maxinputsize: "",
+      gl_texture_hqresize_target: "",
+      gl_use_models: "",
+      gl_vid_compatability: "",
+      handicap: "",
+      instagib: "",
+      invasion: "",
+      lastmanstanding: "",
+      lmsallowedweapons: "",
+      masterhostname: "",
+      maxviewpitch: "",
+      name: "",
+      pointlimit: "",
+      possession: "",
+      queryiwad: "",
+      r_drawplayersprites: "",
+      r_drawspectatingstring: "",
+      r_maxparticles: "",
+      skill: "",
+      skulltag: "",
+      survival: "",
+      switchonpickup: "",
+      teamlms: "",
+      terminator: "",
+      timelimit: "",
+      teamdamage: "",
+      teampossession: "",
+      turbo: "",
+      vid_renderer: "",
+      win_limit: ""
     }
 
   end
