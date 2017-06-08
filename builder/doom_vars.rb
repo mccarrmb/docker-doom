@@ -2,9 +2,9 @@
 # 
 # Management class for Zandronum server variables.
 # Default values for the server variables pulled from 
-# https://wiki.zandronum.com/Server_Variables. 
+# wiki.zandronum.com/Server_Variables. 
 # Default values for the console commands pulled from
-# https://wiki.zandronum.com/Console_Variables
+# Doomseeker source at bitbucket.org/Doomseeker/doomseeker
 
 class DoomVars
   def initialize(name )
