@@ -28,6 +28,6 @@ RUN mkdir /home/zandronum/config && \
 ADD /config/ /home/zandronum/config/
 ADD /bin/ /home/zandronum/bin/
 
-CMD ["/zandronum/srv-exec/summon.sh"]
-ENTRYPOINT ["/zandronum/srv-exec/summon"]
+CMD ["/home/zandronum/bin/summon.sh"]
+ENTRYPOINT ["/home/zandronum/bin/summon.sh"]
 EXPOSE 10666
