@@ -12,7 +12,7 @@ RUN apt-get upgrade --yes
 #Specifically add the Zandronum repo and install the application
 RUN apt-add-repository 'deb http://debian.drdteam.org/ stable multiverse'
 RUN wget -O - http://debian.drdteam.org/drdteam.gpg | sudo apt-key add -
-RUN apt-get update && apt-get upgrade
+RUN apt-get update --yes && apt-get upgrade --yes
 RUN apt-get install --yes --quiet libsdl-image1.2 zandronum 
 
 #Create a non-privileged user
@@ -22,13 +22,13 @@ WORKDIR /home/zandronum
 
 #Build the application directory and add files
 RUN mkdir /home/zandronum/config && \
-  mkdir /home/zandronum/wads && \
-  mkdir /home/zandronum/iwads && \
+  mkdir /home/zandronum/wad/ && \
+  mkdir /home/zandronum/iwad/ && \
   mkdir /home/zandronum/bin/
 ADD /config/ /home/zandronum/config/
 ADD /bin/ /home/zandronum/bin/
-ADD /iwads/ /home/zandronum/iwads/
-ADD /pwads/ /home/zandronum/pwads/
+ADD /iwad/ /home/zandronum/iwad/
+ADD /wad/ /home/zandronum/wad/
 
 CMD ["/home/zandronum/bin/summon.sh"]
 ENTRYPOINT ["/home/zandronum/bin/summon.sh"]
