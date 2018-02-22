@@ -27,6 +27,8 @@ RUN mkdir /home/zandronum/config && \
   mkdir /home/zandronum/bin/
 ADD /config/ /home/zandronum/config/
 ADD /bin/ /home/zandronum/bin/
+ADD /iwads/ /home/zandronum/iwads/
+ADD /pwads/ /home/zandronum/pwads/
 
 CMD ["/home/zandronum/bin/summon.sh"]
 ENTRYPOINT ["/home/zandronum/bin/summon.sh"]
