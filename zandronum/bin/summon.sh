@@ -1,2 +1,11 @@
 #!/bin/bash
-/home/zandronum/zandronum-server -host -port 10668 -iwad "/home/zandronum/.zandronum/doom.wad" -file "/home/zandronum/wad/brutalv20.pk3" +exec /home/zandronum/config/coop-d1-brutal.cfg +CrashLog_Dir "/home/zandronum/logs/coop-d1-brutal" +CrashLogs 2 +map E4M1 2>&1 /dev/null &
+
+/home/zandronum/zandronum-server \
+  -host \
+  -port 10666 \
+  -iwad "/home/zandronum/iwads/$IWAD" \
+  -file "$PWADS" \
+  +exec "/home/zandronum/config/$CONFIG" \
+  +CrashLog_Dir "/home/zandronum/logs/$SRV_NAME.log" \
+  +CrashLogs 2 \
+  +map $BOOT_MAP 
