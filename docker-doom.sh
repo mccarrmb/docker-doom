@@ -1,5 +1,6 @@
 docker run \
   --name docker-doom \
+  --restart always \
   -v ./iwad:/home/zandronum/iwad \
   -v ./wad:/home/zandronum/wad \
   -v ./config/:/home/zandronum/config \
