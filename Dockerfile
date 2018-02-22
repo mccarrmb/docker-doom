@@ -1,6 +1,7 @@
 FROM ubuntu:16.04
 
 #Default environment variables
+ENV DEBIAN_FRONTEND noninteractive 
 ENV IWAD /home/zandronum/iwad/doom1.wad
 ENV CONFIG /home/zandronum/config/default.cfg
 ENV START_MAP E1M1
@@ -14,10 +15,14 @@ RUN dpkg-divert --local --rename --add /sbin/initctl && \
 RUN apt-get update --yes
 RUN apt-get upgrade --yes
 
+#Helper libs for adding PPAs
+RUN apt-get install --yes dialog apt-utils software-properties-common wget
+
 #Specifically add the Zandronum repo and install the application
-RUN apt-add-repository 'deb http://debian.drdteam.org/ stable multiverse'
-RUN wget -O - http://debian.drdteam.org/drdteam.gpg | sudo apt-key add -
-RUN apt-get update --yes && apt-get upgrade --yes
+RUN apt-add-repository 'deb http://debian.drdteam.org stable multiverse'
+RUN wget -O - http://debian.drdteam.org/drdteam.gpg | apt-key add -
+RUN apt-get update --yes 
+RUN apt-get upgrade --yes
 RUN apt-get install --yes --quiet libsdl-image1.2 zandronum 
 
 #Create a non-privileged user
