@@ -32,6 +32,7 @@ RUN mkdir /home/zandronum/config && \
   mkdir /home/zandronum/bin/
 ADD /config/ /home/zandronum/config/
 ADD /bin/ /home/zandronum/bin/
+ADD /player/ /home/zandronum/player/
 ADD /iwad/ /home/zandronum/iwad/
 ADD /wad/ /home/zandronum/wad/
 
