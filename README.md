@@ -23,6 +23,6 @@ __A.__ You can try building the image manually, but I currently don't have any P
 __A.__ You could totally do that. In fact, there really isn't much of a difference. I prefer to use Docker, though, because it saves me the hassle of trying to write clever UpStart/SystemD/rc.d-type service scripts and jobs. All I have to do is add `--restart always` to the run line and the Docker daemon will take care of keeping the servers running.
 
 > __There is currently a game-breaking bug in the Linux version of Zandronum 3.0__  
-> The bug is detailed here, https://zandronum.com/tracker/view.php?id=2775. The short story is that the Linux executable does not calculate resource hashes correctly on its end. This means that if you run a dedicated Linux server, Windows and macOS clients will get kicked because the hashes they send will not match what the Linux server came up with. Since this project uses a Linux-based Docker image, this bug puts us in quite a pickle. 
+> The bug is detailed here, https://zandronum.com/tracker/view.php?id=2775. The short story is that the Linux executable does not calculate resource hashes correctly on its end. This means that if you run a dedicated Linux server, Windows and macOS clients will get kicked because the hashes they send will not match what the Linux server came up with. Since this project uses a Linux-based Docker image, this bug puts us in quite a pickle... until the 3.1 release, anyway. 
 
 
