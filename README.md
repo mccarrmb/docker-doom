@@ -16,7 +16,7 @@ __A.__ You're smart enough to create a GitHub account. You figure it out.  ...In
 
 ### Q. What if I'm on Windows?
 
-__A.__ You can try building the image manually, but I currently don't have any PowerShell helper scripts to do this for you. Be aware that this image is Linux-based which means that it won't run alongside Windows-based containers.
+__A.__ Good news! There is a PowerShell script included alongside the original Bash scripts. Just make sure your PowerShell environment is configured to run unsigned scripts via the [Set-ExecutionPolicy](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.security/set-executionpolicy?view=powershell-6) cmdlet.
 
 ### Q. Why wouldn't I just run these servers locally instead of firing up containers?
 
