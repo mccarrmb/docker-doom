@@ -1,5 +1,10 @@
 #!/bin/bash
 
+function menu()
+{
+  
+}
+
 if [ "`command -v docker`" = '' ]; then
   echo "You have to install docker before you can build the container."
   exit 1
