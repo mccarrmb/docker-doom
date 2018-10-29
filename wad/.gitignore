@@ -1,0 +1,8 @@
+# directory for patch wads and newer GZDoom pk3 & pk7 mods
+
+*.WAD
+*.wad
+*.PK3
+*.pk3
+*.PK7
+*.pk7
