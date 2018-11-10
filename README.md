@@ -4,15 +4,15 @@ A Zandronum server configuration and deployment tool utilizing a Docker-based ba
 ## Usage
 
 1. Install Docker
-2. Run `build-docker-doom.sh`
-3. Run `docker-doom.sh`
+2. Run `build-docker-doom.bash` or `build-docker-doom.ps1`
+3. Run `docker-doom.bash` or `docker-doom.ps1`
 4. Connect to your dumb shareware Doom server
 
 ## F.A.Q.
 
 ### Q. What if I want to customize this container to run a different Doom engine game?
 
-__A.__ You can manually edit `Dockerfile`, `default.cfg`, `adminlist.txt`, `banlist.txt`, `whitelist.txt`, and `summon.bash` to include the desired settings... or just hold tight until I get the "Builder" tool completed. Just a heads up: you'll need Ruby version >= 2.5.0 installed to run this tool. I plan on testing this tool on the native Windows version of Ruby as well, so you shouldn't have to do any weird Linux subsystem magic to run it.
+__A.__ You can manually edit `Dockerfile`, `default.cfg`, `adminlist.txt`, `banlist.txt`, `whitelist.txt`, and `summon.bash` to include the desired settings... or just hold tight until I get the "Builder" tool completed. Just a heads up: you'll need Ruby version >= 2.5.0 installed to run it. I plan to test this on the native Windows version of Ruby so it should run without having to do any weird Linux subsystem magic.
 
 ### Q. What if I'm on Windows?
 
