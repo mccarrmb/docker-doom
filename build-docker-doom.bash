@@ -1,6 +1,6 @@
 #!/bin/bash
 
-function menu()
+function menu
 {
   
 }
