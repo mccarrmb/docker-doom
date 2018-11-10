@@ -14,7 +14,6 @@ module Main
       options.verbose = false
       options.instance_name = 'doom-server'
       options.iwad_file = 'doom.wad'
-      options.server_port = 10_666
       options.ini_file = './doom-server.ini'
 
       opt_parser = OptionParser.new do |opts|
@@ -24,9 +23,6 @@ module Main
         end
         opts.on('-n', '--name [NAME]', 'Logical name of the server instance (NOT the \'hostname\' var!)') do |instance_name|
           options[:instance_name] = instance_name
-        end
-        opts.on('-p', '--port [PORT]', 'Port for the server to use') do |port|
-          options[:server_port] = port
         end
         opts.on('-i', '--ini-file [FILE]', '.ini file to populate settings from') do |ini|
           options[:ini_file] = ini
@@ -46,13 +42,15 @@ module Main
   ARGV.empty? && ARGV.push('-h')
   settings = Options.parse_arguments(ARGV)
 
-  pp settings
-
-  if false
+  doom_vars = DoomVars::ZandronumDoomVars.new(settings.instance_name)
+  # TODO: process .ini file settings and kick off templating process
+  begin
     erb :'summon.bash'
     erb :'adminlist.txt'
     erb :'banlist.txt'
     erb :'default.cfg'
     erb :'whitelist.txt'
+  rescue StandardError => se
+    puts "There was a problem creating the configuration files:\n#{se.message}"
   end
 end
