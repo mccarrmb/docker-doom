@@ -2,9 +2,6 @@ FROM ubuntu:16.04
 
 #Default environment variables
 ENV DEBIAN_FRONTEND noninteractive 
-ENV IWAD /home/zandronum/iwad/doom1.wad
-ENV CONFIG /home/zandronum/config/default.cfg
-ENV START_MAP E1M1
 
 #Disable Upstart (not sure if 16.04 still has Upstart but whatever)
 RUN dpkg-divert --local --rename --add /sbin/initctl && \
@@ -31,7 +28,7 @@ USER zandronum
 WORKDIR /home/zandronum
 
 #Build the application directory and add files
-RUN mkdir /home/zandronum/config && \
+RUN mkdir /home/zandronum/config/ && \
   mkdir /home/zandronum/wad/ && \
   mkdir /home/zandronum/iwad/ && \
   mkdir /home/zandronum/bin/
