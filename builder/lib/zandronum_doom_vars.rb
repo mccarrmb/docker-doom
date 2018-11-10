@@ -1,4 +1,4 @@
-# Class DoomVars
+# Class ZandronumDoomVars
 # Management class for Zandronum server variables.
 # Default values for the server variables pulled from
 # https://wiki.zandronum.com/Server_Variables.
