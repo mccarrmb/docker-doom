@@ -50,9 +50,9 @@ module Main
 
   if false
     erb :'summon.bash'
-    erb :adminlist
-    erb :bans
+    erb :'adminlist.txt'
+    erb :'banlist.txt'
     erb :'default.cfg'
-    erb :whitelist
+    erb :'whitelist.txt'
   end
 end
