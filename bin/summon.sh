@@ -7,4 +7,4 @@
   +exec "/home/zandronum/config/$CONFIG" \
   +CrashLog_Dir "/home/zandronum/logs/$SERVER_NAME.log" \
   +CrashLogs 2 \
-  +map $START_MAP 
+  +map "$START_MAP"
