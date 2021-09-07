@@ -1,11 +1,11 @@
-FROM ubuntu:16.04
+FROM ubuntu:20.04
 
 #Default environment variables
 ENV DEBIAN_FRONTEND noninteractive 
 ENV IWAD /home/zandronum/iwad/doom1.wad
 ENV CONFIG /home/zandronum/config/default.cfg
 ENV START_MAP E1M1
-s
+
 #Disable Upstart (not sure if 16.04 still has Upstart but whatever)
 RUN dpkg-divert --local --rename --add /sbin/initctl && \
   ln -sf /bin/true /sbin/initctl && \

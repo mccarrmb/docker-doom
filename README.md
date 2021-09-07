@@ -17,7 +17,7 @@ A Zandronum server configuration and deployment tool utilizing a Docker-based ba
 
 **Q. What if I'm on Windows?**
 
-**A.** Good news! There is a PowerShell script included alongside the original Bash scripts. Just make sure your PowerShell environment is configured to run unsigned scripts via the [Set-ExecutionPolicy](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.security/set-executionpolicy?view=powershell-6) cmdlet. I'm contemplating writing a seperate Dockerfile that will build a genuine Windows container, but that's a ways off.
+**A.** Good news! There is a PowerShell script included alongside the original Bash scripts. Just make sure your PowerShell environment is configured to run unsigned scripts via the [Set-ExecutionPolicy](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.security/set-executionpolicy?view=powershell-6) cmdlet. I'm contemplating writing a separate Dockerfile that will build a genuine Windows container, but that's a ways off.
 
 **Q. Why wouldn't I just run these servers locally instead of firing up containers?**
 
