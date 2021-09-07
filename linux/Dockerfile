@@ -41,6 +41,6 @@ ADD /player/ /home/zandronum/player/
 ADD /iwad/ /home/zandronum/iwad/
 ADD /wad/ /home/zandronum/wad/
 
-CMD ["/home/zandronum/bin/summon.sh"]
-ENTRYPOINT ["/home/zandronum/bin/summon.sh"]
+CMD ["/home/zandronum/bin/summon.bash"]
+ENTRYPOINT ["/home/zandronum/bin/summon.bash"]
 EXPOSE 10666
