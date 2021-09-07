@@ -1,0 +1,26 @@
+AllCops:
+  Include:
+    - views/**
+    - ./
+  Exclude:
+    - bin/**
+Documentation:
+  Enabled: false
+# Selenium page objects have late bindings that get erroneously detected.
+Lint/UselessAssignment:
+  Enabled: false
+# Drivers don't behave if 'self' isn't explicitly specified.
+Style/RedundantSelf:
+  Enabled: false
+# This isn't 1988. Nobody has 80 column displays anymore.
+Metrics/LineLength:
+  Enabled: false
+# We aren't writing an optimized enterprise script ffs
+Metrics/AbcSize:
+  Enabled: false
+Metrics/ModuleLength:
+  Enabled: false
+Metrics/MethodLength:
+  Enabled: false
+Metrics/ClassLength:
+  Enabled: false

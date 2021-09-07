@@ -1,28 +1,28 @@
 # docker-doom
+
 A Zandronum server configuration and deployment tool utilizing a Docker-based back-end.
 
 ## Usage
 
 1. Install Docker
-2. Run `build-docker-doom.sh`
-3. Run `docker-doom.sh`
+2. Run `build-docker-doom.bash` or `build-docker-doom.ps1`
+3. Run `docker-doom.bash` or `docker-doom.ps1`
 4. Connect to your dumb shareware Doom server
 
-## F.A.Q.
+## FAQ
 
-### Q. What if I want to customize this container to run a different Doom engine game?
+**Q. What if I want to customize this container to run a different Doom engine game?**
 
-__A.__ You're smart enough to create a GitHub account. You figure it out.  ...In the mean time, I'm working on a tool to help with it.
+**A.** You can manually edit `Dockerfile`, `default.cfg`, `adminlist.txt`, `banlist.txt`, `whitelist.txt`, and `summon.bash` to include the desired settings... or hold tight until the "Builder" tool is completed. Just a heads up: you'll need Ruby version >= 2.5.0 installed to run it. I plan to test this on the native Windows version of Ruby so it will run without having to do any weird Linux subsystem magic.
 
-### Q. What if I'm on Windows?
+**Q. What if I'm on Windows?**
 
-__A.__ Good news! There is a PowerShell script included alongside the original Bash scripts. Just make sure your PowerShell environment is configured to run unsigned scripts via the [Set-ExecutionPolicy](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.security/set-executionpolicy?view=powershell-6) cmdlet.
+**A.** Good news! There is a PowerShell script included alongside the original Bash scripts. Just make sure your PowerShell environment is configured to run unsigned scripts via the [Set-ExecutionPolicy](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.security/set-executionpolicy?view=powershell-6) cmdlet. I'm contemplating writing a seperate Dockerfile that will build a genuine Windows container, but that's a ways off.
 
-### Q. Why wouldn't I just run these servers locally instead of firing up containers?
+**Q. Why wouldn't I just run these servers locally instead of firing up containers?**
 
-__A.__ You could totally do that. In fact, there really isn't much of a difference. I prefer to use Docker, though, because it saves me the hassle of trying to write clever UpStart/SystemD/rc.d-type service scripts and jobs. All I have to do is add `--restart always` to the run line and the Docker daemon will take care of keeping the servers running.
+**A.** You could totally do that. In fact, there really isn't much of a difference. I prefer to use Docker, though, because it saves me the hassle of trying to write clever UpStart/SystemD/rc.d-type service scripts and jobs. All I have to do is add `--restart always` to the run line and the Docker daemon will take care of keeping the servers running. Docker also makes it easier to run simultaneous instances which makes custom config files for each port/instance unnecessary. You are more than welcome to use these resources in building your own non-container server, though. All of the configuration files - save for `summon.bash` - are OS agnostic, so you shouldn't have any problems using them on Windows, Linux, or macOS.
 
-> __There is currently a game-breaking bug in the Linux version of Zandronum 3.0__  
-> The bug is detailed here, https://zandronum.com/tracker/view.php?id=2775. The short story is that the Linux executable does not calculate resource hashes correctly on its end. This means that if you run a dedicated Linux server, Windows and macOS clients will get kicked because the hashes they send will not match what the Linux server came up with. Since this project uses a Linux-based Docker image, this bug puts us in quite a pickle... until the 3.1 release, anyway. 
+**Q. How much do I have to know about Docker to run this?**
 
-
+**A.** Honestly? The only thing you have to know is how to install Docker. The scripts are set up to handle building and running the container. macOS and Windows versions of Docker offer a nice interface for stopping any containers should things get out of hand. Unfortunately, the Linux version is terminal-driven and I'm not aware of any great desktop tools that exist at this time. In this case, you should probably learn the `docker stop` and `docker rm` commands.
