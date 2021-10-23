@@ -13,7 +13,7 @@ A Zandronum server configuration and deployment tool utilizing a Docker-based ba
 
 **Q. What if I want to customize this container to run a different Doom engine game?**
 
-**A.** You can manually edit `Dockerfile`, `default.cfg`, `adminlist.txt`, `banlist.txt`, `whitelist.txt`, and `summon.bash` to include the desired settings... or hold tight until the "Builder" tool is completed. Just a heads up: you'll need Ruby version >= 2.5.0 installed to run it. I plan to test this on the native Windows version of Ruby so it will run without having to do any weird Linux subsystem magic.
+**A.** You can manually edit `Dockerfile`, `default.cfg`, `adminlist.txt`, `banlist.txt`, `whitelist.txt`, and `summon.bash` to include the desired settings. I was entertaining the idea of making a tool for this, but most folks using a container probably already have the configs they need.
 
 **Q. What if I'm on Windows?**
 
