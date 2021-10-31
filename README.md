@@ -17,7 +17,7 @@ A Zandronum server configuration and deployment tool utilizing a Docker-based ba
 
 **Q. What if I'm on Windows?**
 
-**A.** There is a PowerShell script included that will allow you to build either the Linux or the Windows container variants (Just run the script with the `-Windows` flag to build the Windows-based version). Make sure your PowerShell environment is configured to run unsigned scripts via the [Set-ExecutionPolicy](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.security/set-executionpolicy?view=powershell-6) cmdlet.
+**A.** There is a PowerShell script included that will allow you to build either the Linux or the Windows container variants (Just run the script with the parameter `-HostOs windows` or `-HostOs windows-server` to build the Windows-based version). Make sure your PowerShell environment is configured to run unsigned scripts via the [Set-ExecutionPolicy](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.security/set-executionpolicy?view=powershell-6) cmdlet.
 
 **Q. Why wouldn't I just run these servers locally instead of firing up containers?**
 
