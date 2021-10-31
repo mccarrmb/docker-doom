@@ -1,4 +1,4 @@
-FROM microsoft/windows
+FROM microsoft/windowsservercore
 LABEL maintainer="mccarrmb@github.com"
 SHELL ["powershell", "-Command", "$ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';"]
 
