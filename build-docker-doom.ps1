@@ -1,11 +1,11 @@
-# This is needed to keep PoSh from displaying that ugly red error
-$CurrentPreference = $ErrorActionPreference
-$ErrorActionPreference = 'stop'
-
 param(
     [Parameter(HelpMessage="Build the Windows version of the docker-doom container instead")]
     [switch]$Windows = $False
 )
+
+# This is needed to keep PoSh from displaying that ugly red error
+$CurrentPreference = $ErrorActionPreference
+$ErrorActionPreference = 'stop'
 
 $image_tag = "docker-doom"
 
