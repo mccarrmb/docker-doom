@@ -2,6 +2,11 @@
 $CurrentPreference = $ErrorActionPreference
 $ErrorActionPreference = 'stop'
 
+param(
+    [Parameter(HelpMessage="Build the Windows version of the docker-doom container instead")]
+    [switch]$Windows = $False
+)
+
 $image_tag = "docker-doom"
 
 # Set a custom tag name if desired
@@ -11,7 +16,11 @@ if ($args.Length -gt 0) { $image_tag = args[0] }
 if (Test-Path .\Dockerfile) { Remove-Item .\Dockerfile }
 
 # Allows Docker to build a windows-based container
-Copy-Item ".\windows\Dockerfile" ".\"
+if ($Windows) {
+    Copy-Item ".\windows\Dockerfile" ".\"
+} else {
+    Copy-Item ".\linux\Dockerfile" ".\"
+}
 
 try { 
     if (Get-Command docker) {
