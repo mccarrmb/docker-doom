@@ -1,4 +1,4 @@
-FROM microsoft/windows
+FROM mcr.microsoft.com/windows:20H2
 LABEL maintainer="mccarrmb@github.com"
 SHELL ["powershell", "-Command", "$ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';"]
 

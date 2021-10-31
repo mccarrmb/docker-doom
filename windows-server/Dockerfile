@@ -1,4 +1,4 @@
-FROM microsoft/windowsservercore
+FROM mcr.microsoft.com/windowsservercore:ltsc2019
 LABEL maintainer="mccarrmb@github.com"
 SHELL ["powershell", "-Command", "$ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';"]
 
