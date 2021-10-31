@@ -6,11 +6,6 @@ ENV IWAD /home/zandronum/iwad/doom1.wad
 ENV CONFIG /home/zandronum/config/default.cfg
 ENV START_MAP E1M1
 
-#Disable Upstart (not sure if 16.04 still has Upstart but whatever)
-RUN dpkg-divert --local --rename --add /sbin/initctl && \
-  ln -sf /bin/true /sbin/initctl && \
-  ln -sf /bin/false /usr/sbin/policy-rc.d
-
 #Update the OS
 RUN apt-get update --yes
 RUN apt-get upgrade --yes
