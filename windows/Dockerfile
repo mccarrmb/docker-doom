@@ -14,7 +14,7 @@ RUN Invoke-WebRequest $('https://zandronum.com/downloads/zandronum{0}-win32-base
     Remove-Item zandronum.zip
 
 #Create a non-privileged user
-RUN useradd -ms /bin/bash zandronum
+RUN net user zandronum change-this-password /ADD
 USER zandronum
 
 #Build the application directory and add files
