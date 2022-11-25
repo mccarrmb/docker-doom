@@ -2,8 +2,9 @@ FROM ubuntu:20.04
 
 #Default environment variables
 ENV DEBIAN_FRONTEND noninteractive 
-ENV IWAD /home/zandronum/iwad/doom1.wad
-ENV CONFIG /home/zandronum/config/default.cfg
+ENV IWAD doom1.wad
+ENV CONFIG default.cfg
+ENV SERVER_NAME docker-doom
 ENV START_MAP E1M1
 
 #Update the OS
@@ -22,19 +23,24 @@ RUN apt-get install --yes --quiet libsdl-image1.2 zandronum
 
 #Create a non-privileged user
 RUN useradd -ms /bin/bash zandronum
-USER zandronum
-WORKDIR /home/zandronum
 
 #Build the application directory and add files
 RUN mkdir /home/zandronum/config && \
   mkdir /home/zandronum/wad/ && \
   mkdir /home/zandronum/iwad/ && \
   mkdir /home/zandronum/bin/
-ADD /config/ /home/zandronum/config/
-ADD /bin/ /home/zandronum/bin/
-ADD /player/ /home/zandronum/player/
-ADD /iwad/ /home/zandronum/iwad/
-ADD /wad/ /home/zandronum/wad/
+COPY /config/ /home/zandronum/config/
+COPY /bin/ /home/zandronum/bin/
+COPY /player/ /home/zandronum/player/
+COPY /iwad/ /home/zandronum/iwad/
+COPY /wad/ /home/zandronum/wad/
+
+USER root
+RUN chown -R zandronum:zandronum /home/zandronum
+
+USER zandronum
+WORKDIR /home/zandronum
+RUN chmod +x /home/zandronum/bin/summon.bash
 
 CMD ["/home/zandronum/bin/summon.bash"]
 ENTRYPOINT ["/home/zandronum/bin/summon.bash"]

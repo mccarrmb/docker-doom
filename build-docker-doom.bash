@@ -14,3 +14,5 @@ if [ -d "./Dockerfile" ]; then rm -r "./Dockerfile"; fi
 
 cp "./linux/Dockerfile" "./"
 docker build . -t "$image_tag"
+
+rm ./Dockerfile
