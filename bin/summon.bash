@@ -1,7 +1,4 @@
 #!/bin/bash
-
-echo "$IWAD $CONFIG $SERVER_NAME $START_MAP"
-
 zandronum-server \
   -host \
   -port 10666 \
