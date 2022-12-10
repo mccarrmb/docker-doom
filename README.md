@@ -25,6 +25,6 @@ A Zandronum server configuration and deployment tool utilizing a Docker-based ba
 
 **Q. How much do I have to know about Docker to run this?**
 
-**A.** If you're running the Linux container on a Mac or Windows host, the only thing you _should_ have to know is how to install Docker. The scripts are set up to handle building and running the container. MacOS and Windows versions of Docker offer a nice interface for starting/stopping any containers should things get out of hand. Unfortunately, the Linux version is terminal-driven and I'm not aware of any great desktop tools that exist at this time. In the case you're running a Linux host, you should probably learn the `docker stop` and `docker rm` terminal commands.
+**A.** If you're running the Linux container on a Mac or Windows host, the only thing you _should_ have to know is how to install Docker. The scripts are set up to handle building and running the container. MacOS, Windows, and Linux versions of Docker offer a nice interface (Docker Desktop) for starting/stopping any containers should things get out of hand.
 
 If you're running the Windows containers, you can still use the Docker Desktop tool. However, you'll have to manage the networking properties via Hyper-V. I really wouldn't recommend the Windows container unless you absolutely need it **and** you also have Hyper-V experience.
