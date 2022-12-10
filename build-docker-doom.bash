@@ -1,5 +1,5 @@
 #!/bin/bash
-image_tag="docker-doom"
+image_tag="docker-doom:1.0"
 
 if [ "$(command -v docker)" = '' ]; then
   echo "You have to install docker before you can build the container."
@@ -14,3 +14,6 @@ if [ -d "./Dockerfile" ]; then rm -r "./Dockerfile"; fi
 
 cp "./linux/Dockerfile" "./"
 docker build . -t "$image_tag"
+
+# Clean up after ourselves
+rm ./Dockerfile
