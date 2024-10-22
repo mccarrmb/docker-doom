@@ -1,4 +1,5 @@
 #!/bin/bash
+
 image_tag="docker-doom:1.0"
 
 if [ "$(command -v docker)" = '' ]; then

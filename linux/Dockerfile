@@ -1,4 +1,4 @@
-FROM ubuntu:20.04
+FROM ubuntu:22.04
 
 # Default environment variables
 ENV DEBIAN_FRONTEND noninteractive 
@@ -14,12 +14,18 @@ RUN apt-get upgrade --yes
 # Helper libs for adding PPAs
 RUN apt-get install --yes dialog apt-utils software-properties-common wget
 
+# Manually install libssl1.1
+COPY /linux/libssl1.1_1.1.1w-0+deb11u1_amd64.deb /home/
+RUN ls -la /home
+RUN apt-get install /home/libssl1.1_1.1.1w-0+deb11u1_amd64.deb
+
+
 # Specifically add the Zandronum repo and install the application
 RUN wget -O - http://debian.drdteam.org/drdteam.gpg | apt-key add -
 RUN apt-add-repository 'deb https://debian.drdteam.org stable multiverse'
 RUN apt-get update --yes 
 RUN apt-get upgrade --yes
-RUN apt-get install --yes --quiet libsdl-image1.2 zandronum 
+RUN apt-get install --yes --quiet libsdl-image1.2 zandronum libssl-dev
 
 # Stop any firewall hijinx
 #RUN ufw disable
